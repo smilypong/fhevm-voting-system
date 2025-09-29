@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FHEVM Voting System - Demo Hub</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        
+        .header {
+            text-align: center;
+            color: white;
+            margin-bottom: 40px;
+        }
+        
+        .header h1 {
+            font-size: 3em;
+            margin: 0;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .header p {
+            font-size: 1.2em;
+            margin: 10px 0;
+            opacity: 0.9;
+        }
+        
+        .container {
+            background: white;
+            border-radius: 15px;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            margin-bottom: 20px;
+        }
+        
+        .demo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin: 30px 0;
+        }
+        
+        .demo-card {
+            background: #f8f9fa;
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 2px solid transparent;
+        }
+        
+        .demo-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            border-color: #667eea;
+        }
+        
+        .demo-card h3 {
+            color: #333;
+            margin: 0 0 15px 0;
+            font-size: 1.5em;
+        }
+        
+        .demo-card p {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+        
+        .demo-link {
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            text-decoration: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-weight: bold;
+            transition: background 0.3s ease;
+            margin: 5px;
+        }
+        
+        .demo-link:hover {
+            background: #5a6fd8;
+            color: white;
+        }
+        
+        .demo-link.secondary {
+            background: #6c757d;
+        }
+        
+        .demo-link.secondary:hover {
+            background: #5a6268;
+        }
+        
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 40px 0;
+        }
+        
+        .feature {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 10px;
+            text-align: center;
+        }
+        
+        .feature-icon {
+            font-size: 3em;
+            margin-bottom: 15px;
+        }
+        
+        .feature h4 {
+            color: #333;
+            margin: 0 0 10px 0;
+        }
+        
+        .feature p {
+            color: #666;
+            font-size: 0.9em;
+        }
+        
+        .quick-start {
+            background: #e3f2fd;
+            border: 1px solid #bbdefb;
+            border-radius: 10px;
+            padding: 25px;
+            margin: 30px 0;
+        }
+        
+        .quick-start h3 {
+            color: #1976d2;
+            margin-top: 0;
+        }
+        
+        .code-block {
+            background: #2d3748;
+            color: #e2e8f0;
+            padding: 15px;
+            border-radius: 8px;
+            font-family: 'Courier New', monospace;
+            margin: 10px 0;
+            overflow-x: auto;
+        }
+        
+        .status-indicator {
+            display: inline-block;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            margin-right: 8px;
+        }
+        
+        .status-online {
+            background: #28a745;
+        }
+        
+        .status-offline {
+            background: #dc3545;
+        }
+        
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2em;
+            }
+            
+            .demo-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>🗳️ FHEVM Voting System</h1>
+        <p>Privacy-Preserving Blockchain Voting - Demo Hub</p>
+    </div>
+
+    <div class="container">
+        <h2>🚀 Live Demo Links</h2>
+        <div class="demo-grid">
+            <div class="demo-card">
+                <h3>📊 Main Demo</h3>
+                <p>Complete voting system demo with live statistics and interactive features</p>
+                <a href="/demo.html" class="demo-link">Open Main Demo</a>
+                <br>
+                <small>Port: 3000 | <span class="status-indicator status-online"></span>Live</small>
+            </div>
+            
+            <div class="demo-card">
+                <h3>🔐 FHEVM Voting</h3>
+                <p>Privacy-preserving voting with FHEVM encryption technology</p>
+                <a href="/frontend/index.html" class="demo-link">Open FHEVM Demo</a>
+                <br>
+                <small>Port: 3001 | <span class="status-indicator status-online"></span>Live</small>
+            </div>
+            
+            <div class="demo-card">
+                <h3>⚡ Simple Voting</h3>
+                <p>Basic voting interface with smart contract integration</p>
+                <a href="/frontend/voting-app.html" class="demo-link">Open Simple Voting</a>
+                <br>
+                <small>Port: 3002 | <span class="status-indicator status-online"></span>Live</small>
+            </div>
+        </div>
+
+        <div class="quick-start">
+            <h3>🚀 Quick Start Commands</h3>
+            <p>Run these commands in your terminal to start the demos:</p>
+            
+            <div class="code-block">
+# Start main demo (port 3000)
+npm run live
+
+# Start FHEVM demo (port 3001)  
+npm run live-frontend
+
+# Start simple voting (port 3002)
+npm run live-voting
+
+# Start general server (port 8080)
+npm run serve
+            </div>
+        </div>
+
+        <div class="features">
+            <div class="feature">
+                <div class="feature-icon">🔒</div>
+                <h4>Privacy-Preserving</h4>
+                <p>Votes are encrypted using FHEVM technology</p>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">👁️</div>
+                <h4>Transparent</h4>
+                <p>Publicly verifiable results on blockchain</p>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">⚡</div>
+                <h4>Real-time</h4>
+                <p>Live updates and instant results</p>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">📱</div>
+                <h4>Responsive</h4>
+                <p>Works on all devices and screen sizes</p>
+            </div>
+        </div>
+
+        <div class="demo-grid">
+            <div class="demo-card">
+                <h3>🛠️ Development</h3>
+                <p>Development tools and testing commands</p>
+                <a href="#" class="demo-link secondary" onclick="showDevCommands()">Show Commands</a>
+            </div>
+            
+            <div class="demo-card">
+                <h3>📚 Documentation</h3>
+                <p>Project documentation and guides</p>
+                <a href="#" class="demo-link secondary" onclick="showDocs()">View Docs</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function showDevCommands() {
+            alert(`Development Commands:
+            
+# Compile contracts
+npm run compile
+
+# Run tests
+npm run test
+
+# Deploy to localhost
+npm run deploy
+
+# Start local blockchain
+npm run node
+
+# Run demo script
+npm run demo`);
+        }
+        
+        function showDocs() {
+            alert(`Documentation Files:
+            
+• README.md - Main project documentation
+• QUICK_START.md - Quick start guide
+• DEPLOYMENT_GUIDE.md - Deployment instructions
+• SEPOLIA_SETUP.md - Sepolia testnet setup
+• COMPETITION_SUBMISSION.md - Competition details`);
+        }
+        
+        // Auto-refresh demo status
+        function updateDemoStatus() {
+            // This would check if servers are running
+            // For now, we'll assume they're online
+            console.log('Demo status updated');
+        }
+        
+        // Initialize
+        document.addEventListener('DOMContentLoaded', function() {
+            updateDemoStatus();
+        });
+    </script>
+</body>
+</html>

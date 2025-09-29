@@ -1,0 +1,46 @@
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.24;
+
+import "@fhevm/solidity/FHE.sol";
+
+contract FHEVMCounter {
+    euint32 private _count;
+    euint32 private _maxCount;
+    
+    event CountUpdated(euint32 newCount);
+    event MaxCountSet(euint32 newMaxCount);
+    
+    constructor() {
+        _count = FHE.asEuint32(0);
+        _maxCount = FHE.asEuint32(100);
+    }
+    
+    function increment() public {
+        euint32 one = FHE.asEuint32(1);
+        _count = FHE.add(_count, one);
+        emit CountUpdated(_count);
+    }
+    
+    function decrement() public {
+        euint32 one = FHE.asEuint32(1);
+        _count = FHE.sub(_count, one);
+        emit CountUpdated(_count);
+    }
+    
+    function setMaxCount(euint32 newMaxCount) public {
+        _maxCount = newMaxCount;
+        emit MaxCountSet(_maxCount);
+    }
+    
+    function getCount() public view returns (euint32) {
+        return _count;
+    }
+    
+    function getMaxCount() public view returns (euint32) {
+        return _maxCount;
+    }
+    
+    function isAtMax() public view returns (ebool) {
+        return FHE.gte(_count, _maxCount);
+    }
+}

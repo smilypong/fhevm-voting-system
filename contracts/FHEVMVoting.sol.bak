@@ -1,0 +1,82 @@
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.24;
+
+import "@fhevm/solidity/FHE.sol";
+
+contract FHEVMVoting {
+    // Encrypted vote counts for each option
+    euint32 private _option1Votes;
+    euint32 private _option2Votes;
+    euint32 private _option3Votes;
+    euint32 private _totalVotes;
+    
+    // Voting status
+    bool public votingOpen = true;
+    address public owner;
+    
+    // Events
+    event VoteCast(address indexed voter, uint8 option);
+    event VotingClosed();
+    event VotingOpened();
+    
+    constructor() {
+        owner = msg.sender;
+        _option1Votes = FHE.asEuint32(0);
+        _option2Votes = FHE.asEuint32(0);
+        _option3Votes = FHE.asEuint32(0);
+        _totalVotes = FHE.asEuint32(0);
+    }
+    
+    // Cast a vote (1, 2, or 3)
+    function castVote(euint8 encryptedVote) public {
+        require(votingOpen, "Voting is closed");
+        
+        // Decrypt and validate vote (this would be done client-side in real implementation)
+        // For demo purposes, we'll assume the vote is valid
+        
+        // Add to total votes
+        euint32 one = FHE.asEuint32(1);
+        _totalVotes = FHE.add(_totalVotes, one);
+        
+        // Add to specific option (simplified - in real implementation you'd need conditional logic)
+        // This is a demo showing encrypted vote counting
+        _option1Votes = FHE.add(_option1Votes, one);
+        
+        emit VoteCast(msg.sender, 1);
+    }
+    
+    // Get encrypted vote counts (only owner can decrypt)
+    function getOption1Votes() public view returns (euint32) {
+        return _option1Votes;
+    }
+    
+    function getOption2Votes() public view returns (euint32) {
+        return _option2Votes;
+    }
+    
+    function getOption3Votes() public view returns (euint32) {
+        return _option3Votes;
+    }
+    
+    function getTotalVotes() public view returns (euint32) {
+        return _totalVotes;
+    }
+    
+    // Admin functions
+    function closeVoting() public {
+        require(msg.sender == owner, "Only owner can close voting");
+        votingOpen = false;
+        emit VotingClosed();
+    }
+    
+    function openVoting() public {
+        require(msg.sender == owner, "Only owner can open voting");
+        votingOpen = true;
+        emit VotingOpened();
+    }
+    
+    // Check if voting is active
+    function isVotingOpen() public view returns (bool) {
+        return votingOpen;
+    }
+}

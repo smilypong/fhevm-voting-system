@@ -1,0 +1,41 @@
+{
+  "_format": "hh-sol-cache-2",
+  "files": {
+    "/Users/mk83/fhevm-new-project/contracts/SimpleVoting.sol": {
+      "lastModificationDate": 1759083158081,
+      "contentHash": "d178cdd6365543578df84e8d64ef0aa8",
+      "sourceName": "contracts/SimpleVoting.sol",
+      "solcConfig": {
+        "version": "0.8.24",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.24"
+      ],
+      "artifacts": [
+        "SimpleVoting"
+      ]
+    }
+  }
+}

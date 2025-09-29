@@ -1,0 +1,21 @@
+{
+  "address": "0x5FbDB2315678afecb367f032d93F642f64180aa3",
+  "network": "hardhat",
+  "deployedAt": "2025-09-28T18:44:31.409Z",
+  "abi": [
+    "constructor()",
+    "event VoteCast(address indexed,uint8)",
+    "event VotingClosed()",
+    "event VotingOpened()",
+    "function castVote(uint8)",
+    "function closeVoting()",
+    "function getOption1Votes() view returns (uint32)",
+    "function getOption2Votes() view returns (uint32)",
+    "function getOption3Votes() view returns (uint32)",
+    "function getTotalVotes() view returns (uint32)",
+    "function isVotingOpen() view returns (bool)",
+    "function openVoting()",
+    "function owner() view returns (address)",
+    "function votingOpen() view returns (bool)"
+  ]
+}
